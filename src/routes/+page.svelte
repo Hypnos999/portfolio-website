@@ -1,30 +1,22 @@
 <script>
     import selfie from "$lib/file1.png"
-    import its_logo from "$lib/its_logo.png"
+    // import its_logo from "$lib/its_logo.png"
+    import its_logo from "$lib/its_logo_black.png"
+    // import its_corso from "$lib/its_corso.png"
+    // import its_corso from "$lib/its_corso_white.png"
+    import contour from "$lib/contour_yellow.png"
 </script>
 
 <section>
     <div id="first-pannel">
         <div id="foto">
-            <img src={selfie} alt="A photo of myself">
+            <img id="selfie" src={selfie} alt="A photo of myself">
         </div>
+        <img id="contour" src={contour} alt="">
     
-        <nav>
+        <nav id="first-pannel-text">
             <h1>Hi, i'm <h1 class="dark-text">Flavio Manna</h1></h1>
-            <p>Mi chiamo Flavio Manna e sono un
-                giovane studente e praticante nel
-                campo del Machine Learning.
-                Ciò che mi stimola e mi appassiona di
-                questo settore è la possibilità di dare
-                vita alle mie idee e di applicarle alla
-                vita di tutti i giorni.
-                Seguire da vicino e partecipare allo
-                sviluppo di questa tecnologia è per
-                me fonte di stimolo e non vedo l’ora
-                di entrare nel mondo del lavoro per
-                apprendere nuove conoscenze e
-                fornire il mio contributo in questo
-                ambito.</p>
+            <p class="text">I am a young student in the field of Machine Learning. <br/> What motivates and excites me about is the opportunity to bring my ideas to life and apply them to everyday life. <br><br> Closely following and participating in the development of this technology is a source of stimulation for me, and I look forward to being able to apply these innovations to find new opportunities to help people which have more problems interacting with evety day life and make a truly useful contribution to society.</p>
         </nav>
     
         <a href="#second-pannel">
@@ -45,23 +37,51 @@
             </div>
         </a>
 
+        <div id="studies">
+            <h2>Studies</h2>
+            <!-- <img id="its-corso" src={its_corso} alt=""> -->
+            <h3>Artificial Intelligence & Machine Learning Specialist course at ITS Angelo Rizzoli</h3>
+            <p>The course prepares experienced Machine Learning Technicians with in-depth knowledge of leading artificial intelligence-oriented software and programming languages. <br><br> 
+                The training is scheduled to last 2 years. It is organized into 1,000 hours of training each year, with a total of 2,000 hours divided as follows: 1,160 hours of classroom and laboratory training; 840 hours of internship/internship.</p>
+            <img id="its-logo" src={its_logo} alt="A logo of the techinal istitute where a studied">
+        </div>
         
-        <h2>My instruction</h2>
-        <h2>My background</h2>
-        <img id="its-logo" src={its_logo} alt="A logo of the techinal istitute where a studied">
+        <div id="background">
+            <h2>Background</h2>
+        </div>
+
+        <div id="bg"></div>
     </div>
 </section>
 
 
 <style>
     * {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         scroll-behavior: smooth;
     }
 
-    #its-logo {
-        width: 10vw;
-        height: auto;
-        /* height: 10vw; */
+    img { 
+        user-select: none;
+    }
+
+    #first-pannel-text {
+        width: fit-content;
+        /* background: green; */
+        position: absolute;
+        top: 50vh;
+        left: 50vw;
+        transform: translateX(10%) translateY(-200%);
+    }
+    
+    .text {
+        position: absolute;
+        font-size: 24px;
+        line-height: 1.75em;
+        color: #eee;
+        text-align: center;
+        text-align: start;
+        left: 3px;
     }
 
     #first-pannel{
@@ -74,43 +94,48 @@
         height: 75vh;
         position: absolute;
         bottom: 0;
-        opacity: 0.8;
+        /* opacity: 0.8; */
         left: 10vw;
         overflow: hidden;
+        z-index: 0;
     }
 
-    img {
+    #foto img {
         height: 85vh;
-        opacity: 0.8;
+        width: auto;
+        /* opacity: 1; */
     }
-
-    nav {
+    
+    #contour {
         position: absolute;
-        left: 50vw;
-        top: 50vh;
-        transform: translateY(-50%);
+        height: 85vh;
+        bottom: -10vh;
+        left: 8.5vw;
+        z-index: -1;
+    }
+    
+    #selfie {
+        z-index: 3;
+        position: relative;
+        /* top: 10px; */
     }
 
-    h1 {
+    #first-pannel-text h1 {
         font-size: 50px;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: #d00000;
         display: inline-block;
+        /* color: #6a040f; */
+        color: #fdc43f;
     }
-
+    
     .dark-text {
-        color: #6a040f;
+        /* color: #980000 !important; */
+        /* color: #fecf3e !important; */
+        color: #ffda3d !important;
     }
 
-    h1 .dark-text {
-        font-size: 70px;
-    }
-
-    p {
-        font-size: 24px;
-        color: #ddd;
-        width: 40vw;
-        margin-top: 20px;
+    #first-pannel-text h1 .dark-text {
+        font-size: 80px;
     }
 
     .arrow-down {
@@ -143,6 +168,8 @@
     .arrow span {
         border-bottom: 5px solid #d00000;
         border-right: 5px solid #6a040f;
+        border-bottom: 5px solid #fdc43f;
+        border-right: 5px solid #fdbe39;
     }
 
     .arrow-down span {
@@ -174,9 +201,70 @@
 
     #second-pannel {
         width: 100vw;
-        height: 100vh;
-        background: #6a040f;
+        height: 85vh;
+        padding-top: 15vh;
+        /* background: #6a040f; */
+        /* background: #fdbe39; */
+        background: #fdb833;
         position: relative;
+        display: flex;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    #second-pannel h2 {
+        color: #000;
+        /* color: #000; */
+        text-transform: uppercase;
+        font-size: 70px;
+    }
+
+
+    /* #its-corso {
+        width: 10vw;
+        height: auto;
+    } */
+
+    #its-logo {
+        width: 20vw;
+        height: auto;
+        position: relative;
+        top: 7.5vh;
+        left: 49%;
+        transform: translateX(-50%);
+        opacity: 0.8;
+        /* height: 10vw; */
+    }
+
+    #studies {
+        width: 40vw;
+        height: 100%;
+        margin: 0 5vw 0 5vw;
+    }
+
+    #second-pannel p {
+        color: #111;
+        font-size: 24px;
+        margin-top: 20px;
+        font-weight: 500;
+    }
+
+    #second-pannel h3 {
+        margin-top: 10px;
+        color: #222;
+        font-size: 34px;
+    }
+
+    #bg {
+        width: 50vw;
+        height: 200vh;
+        position: absolute;
+        top: -25%;
+        left: 55%;
+        transform: rotate(45deg);
+        z-index: -1;
+        background: green;
+        background: #fdbe39;
     }
 
 
