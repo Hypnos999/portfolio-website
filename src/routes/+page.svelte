@@ -212,10 +212,9 @@
 
     #second-pannel {
         width: 100vw;
-        height: 85vh;
-        padding-top: 15vh;
-        /* background: #6a040f; */
-        /* background: #fdbe39; */
+        /* height: 85vh;
+        padding-top: 15vh; */
+        height: 100vh;
         background: #fdb833;
         position: relative;
         display: flex;
@@ -241,10 +240,13 @@
         /* height: 10vw; */
     }
 
-    #studies {
-        width: 40vw;
-        height: 100%;
+    #studies, #background {
+        height: fit-content;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
         margin: 0 5vw 0 5vw;
+        width: 40vw;
     }
 
     #second-pannel p {
@@ -266,7 +268,7 @@
         position: absolute;
         top: -25%;
         left: 55%;
-        transform: rotate(45deg);
+        transform: rotate(45deg) !important;
         z-index: -1;
         /* background: green; */
         background: #fdbe39;
@@ -274,9 +276,6 @@
 
     #background {
         text-align: right;
-        width: 40vw;
-        height: 100%;
-        margin: 0 5vw 0 5vw;
     }
 
     @media only screen and (max-width: 1700px) {
@@ -370,11 +369,59 @@
             transform: translateX(-50%);
         }
 
+        .arrow, .arrow-down {
+            display: none !important;
+        }
+
         #first-pannel-text {
             left: 50vw !important;
             transform: translateX(-50%);
-            top: 20vh !important;
+            top: 17.5vh !important;
             width: 75vw;
+        }
+
+        #second-pannel {
+            /* width: 100svw; */
+            display: block;
+        }
+
+        #second-pannel > * {
+            width: 80vw;
+            margin: 0 10vw;
+            top: 0;
+            transform: translateY(0);
+        }
+
+        #second-pannel p {
+            width: 90%;
+        }
+
+        #its-logo {
+            position: absolute !important;
+            top: -7.5vh !important;
+            right: 0 !important;
+            left: auto !important;
+            transform: translateX(0) !important;
+        }
+
+        #background {
+            margin-top: 3vh;
+        }
+
+        #background p {
+            margin-left: 10%;
+        }
+
+        #second-pannel h2 {
+            font-size: 34px !important;
+        }
+
+        #second-pannel h3 {
+            margin-top: 0;
+        }
+
+        #bg {
+            top: -25% !important;
         }
 
         @media only screen and (max-height: 1000px) {
@@ -411,7 +458,6 @@
 
         body #first-pannel > #first-pannel-text h1:not(.dark-text) {
             font-size: 20px !important;
-            
         }
 
         body #first-pannel > #first-pannel-text h1.dark-text {
@@ -428,6 +474,58 @@
     @media only screen and (max-width: 600px) {
         body #first-pannel > #first-pannel-text .text {
             font-size: 14px !important;
+            text-align: center;
+        }
+
+        body #first-pannel > #first-pannel-text div {
+            width: fit-content !important;
+            position: relative;
+            left: 50% !important;
+            transform: translateX(-50%);
+        }
+
+        body #first-pannel > #first-pannel-text h1:not(.dark-text) {
+            font-size: 16px !important;
+        }
+
+        body #first-pannel > #first-pannel-text h1.dark-text {
+            font-size: 26px !important;
+            margin-left: 7.5px !important;
+        }
+
+        #second-pannel h2 {
+            font-size: 24px !important;
+        }
+
+        #second-pannel {
+            height: 97.5vh !important;
+            height: 200vh !important;
+            height: fit-content !important;
+            padding-top: 5vh !important;
+            padding-bottom: 0 !important;
+        }
+
+        h3 {
+            margin-top: 0 !important;
+            font-size: 16px !important;
+        }
+
+        #second-pannel p {
+            margin-top: 7.5px !important;
+            font-size: 14px;
+        }
+
+        #its-logo {
+            display: none;
+        }
+
+        #studies, #background {
+            height: fit-content !important;
+            margin-bottom: 5vh;
+        }
+
+        #bg {
+            display: none;
         }
     }
 

@@ -110,8 +110,16 @@
 
     @media only screen and (max-width: 600px) {
         a {
-            padding: 10px 7.5px !important;
+            padding: 10px !important;
             font-size: 14px !important;
+        }
+
+        a:hover, .active {
+            padding: 10px 12px !important;
+        }
+
+        nav {
+            top: 15px !important;
         }
     }
 
